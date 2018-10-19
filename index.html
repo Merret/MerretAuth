@@ -26,6 +26,21 @@
     div {
         word-break: break-word;
     }
+    i.a:hover {
+        color: #be4bdb;
+    }
+    i.b:hover {
+        color: #2196F3;
+    }
+    i.c:hover {
+        color: #82c91e;
+    }
+    i.d:hover {
+        color: #fd7e14;
+    }
+    i.e:hover {
+        color: #f783ac;
+    }
 </style>
 </head>
 <body class="w3-container w3-center" onload="checkLS()">
@@ -40,6 +55,7 @@
         <div id="div-footer"></div>
     </div>
 <script>
+    var color = ["be4bdb","2196F3","82c91e","fd7e14","#f783ac"];
     var LS;
     function checkLS() {
         if (typeof(Storage) !== "undefined") {
@@ -53,11 +69,19 @@
     }
     function LFinit() {
         elm.id("h1-header").innerHTML = "Login";
-	elm.id("div-body").innerHTML = "";
-	elm.id("div-body").innerHTML += '<i class="fas fa-user fa-2x w3-hover-text-blue"></i><input id="username" class="w3-margin" style="width: 70%" type="text"/><br>';
-	elm.id("div-body").innerHTML += '<i class="fas fa-key fa-2x w3-hover-text-blue"></i><input id="password" class="w3-margin" style="width: 70%" type="password"/><br>';
-	elm.id("div-body").innerHTML += '<i class="fas fa-sign-in-alt fa-2x button w3-hover-text-blue w3-hover-border-blue"></i>';
-	
+        elm.id("div-body").innerHTML = "";
+        elm.id("div-body").innerHTML += '<i id="i-un" class="fas fa-user fa-2x w3-hover-text-blue"></i><input id="username" class="w3-margin" style="width: 70%" type="text"/><br>';
+        elm.id("div-body").innerHTML += '<i id="i-pw" class="fas fa-key fa-2x w3-hover-text-blue"></i><input id="password" class="w3-margin" style="width: 70%" type="password"/><br>';
+        elm.id("div-body").innerHTML += '<i id="i-login" class="fas fa-sign-in-alt fa-2x button w3-hover-text-blue w3-hover-border-blue"></i>';
+    }
+    function changeColor() {
+        var index = Math.floor(Math.random()*4+1);
+        var abc = ["a","b","c","d","e"];
+        var chosen = color[index];
+        document.body.style.backgroundColor = chosen;
+        elm.id("i-un").classList.add(abc[index]);
+        elm.id("i-pw").classList.add(abc[index]);
+        elm.id("i-login").classList.add(abc[index]);
     }
 </script>
 </body>
