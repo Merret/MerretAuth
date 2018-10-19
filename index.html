@@ -75,13 +75,13 @@
         elm.id("div-body").innerHTML += '<i id="i-login" class="fas fa-sign-in-alt fa-2x button w3-hover-text-blue w3-hover-border-blue"></i>';
     }
     function changeColor() {
-        var index = Math.floor(Math.random()*4+1);
+        var index = Math.floor(Math.random()*4);
         var abc = ["a","b","c","d","e"];
         var chosen = color[index];
         document.body.style.backgroundColor = chosen;
-        elm.id("i-un").classList.add(abc[index]);
-        elm.id("i-pw").classList.add(abc[index]);
-        elm.id("i-login").classList.add(abc[index]);
+        elm.id("i-un").className += " " + abc[index];
+        elm.id("i-pw").className += " " + abc[index];
+        elm.id("i-login").className += " " + abc[index];
     }
 </script>
 </body>
