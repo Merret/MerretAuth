@@ -45,14 +45,18 @@
         if (typeof(Storage) !== "undefined") {
             LS = localStorage;
             LS.setItem("LScheck", "passed");
-            init();
+            LFinit();
         } else {
             elm.id("h1-header").innerHTML = "Sorry";
             elm.id("p-body").innerHTML = "Your device or browser doesn't support essential functions.";
         }
     }
-    function init() {
-        
+    function LFinit() {
+        elm.id("h1-header").innerHTML = "Login";
+	elm.id("div-body") = "";
+	elm.id("div-body") += '<i class="fas fa-user"></i><input id="username" style="width: 90%" type="text"/>';
+	elm.id("div-body") += '<i class="fas fa-user"></i>';
+	
     }
 </script>
 </body>
