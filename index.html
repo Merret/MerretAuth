@@ -57,7 +57,6 @@
 <script>
     var color = ["be4bdb","2196F3","82c91e","fd7e14","#f783ac"];
     var LS;
-    changeColor();
     function checkLS() {
         if (typeof(Storage) !== "undefined") {
             LS = localStorage;
@@ -74,6 +73,7 @@
         elm.id("div-body").innerHTML += '<i id="i-un" class="fas fa-user fa-2x"></i><input id="username" class="w3-margin" style="width: 70%" type="text"/><br>';
         elm.id("div-body").innerHTML += '<i id="i-pw" class="fas fa-key fa-2x"></i><input id="password" class="w3-margin" style="width: 70%" type="password"/><br>';
         elm.id("div-body").innerHTML += '<i id="i-login" class="fas fa-sign-in-alt fa-2x button"></i>';
+        changeColor();
     }
     function changeColor() {
         var index = Math.floor(Math.random()*4);
