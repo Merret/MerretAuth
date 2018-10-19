@@ -30,9 +30,13 @@
 </head>
 <body class="w3-container w3-center">
     <div class="w3-card w3-round-xlarge w3-margin w3-padding">
-        <div id="div-header"></div>
-        <hr style="width: 80%; color: gray;">
-        <div id="div-body"></div>
+        <div id="div-header">
+            <h1 id="h1-header"></h1>
+	    </div>
+        <hr style="margin-left:10%; width: 80%; color: gray;">
+        <div id="div-body">
+            <p id="p-body"></p>
+        </div>
         <div id="div-footer"></div>
     </div>
 <script>
@@ -43,8 +47,8 @@
             LS.setItem("LScheck", "passed");
             init();
         } else {
-            elm.id("div-header").innerHTML = "Sorry";
-            elm.id("div-body").innerHTML = "Your device or browser doesn't support essential functions.";
+            elm.id("h1-header").innerHTML = "Sorry";
+            elm.id("p-body").innerHTML = "Your device or browser doesn't support essential functions.";
         }
     }
     function init() {
