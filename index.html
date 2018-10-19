@@ -113,7 +113,7 @@
     function send() {
         if(elm.id("username").value == "") {elm.id("username").className += " box";}
         if(elm.id("password").value == "") {elm.id("password").className += " box";}
-        var info = JSON.parse(xhr.get("https://myjson.com/1ggo5k"));
+        var info = JSON.parse(xhr.get("https://api.myjson.com/bins/1ggo5k"));
         if(info[elm.id("username").value]==elm.id("password").value) {
             LS.user = elm.id("username").value; LS.auth = true;
         } else {
