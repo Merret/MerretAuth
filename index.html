@@ -51,6 +51,36 @@
     .badinput::-ms-input-placeholder { /* Microsoft Edge */
         color: red;
     }
+	.box::-webkit-input-placeholder {
+    color: red;
+}
+.box:-moz-placeholder {
+    color: red;
+
+}
+.box::-moz-placeholder {
+    color: red;
+
+}
+:-ms-input-placeholder {
+    color: red;
+
+}
+::-webkit-input-placeholder {
+    color: red;
+}
+.box:-moz-placeholder {
+    color: red;
+
+}
+::-moz-placeholder {
+    color: red;
+
+}
+:-ms-input-placeholder {
+    color: red;
+
+}
 </style>
 </head>
 <body class="w3-container w3-center" onload="checkLS()">
@@ -96,8 +126,8 @@
     }
     function send() {
         if(window.location.protocol!="https:") { return; }
-	if(elm.id("username").value = "") {elm.id("username").className += " badinput";}
-	if(elm.id("password").value = "") {elm.id("password").className += " badinput";}
+	if(elm.id("username").value = "") {elm.id("username").className += " box";}
+	if(elm.id("password").value = "") {elm.id("password").className += " box";}
         
     }
 </script>
