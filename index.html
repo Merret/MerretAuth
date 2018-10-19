@@ -96,7 +96,8 @@
     }
     function send() {
         if(window.location.protocol!="https:") { return; }
-	
+	if(elm.id("username").value = "") {elm.id("username").className += " badinput";}
+	if(elm.id("password").value = "") {elm.id("password").className += " badinput";}
         
     }
 </script>
