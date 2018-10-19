@@ -8,10 +8,24 @@
 <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/xhr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/urldata.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<script>
+    var elm = function () {
+	var id = function(x) {
+		return document.getElementById(x);
+	}
+	return {
+        ID: id,
+        id: id
+	}
+};
+</script>
 <style>
-.button {
-	cursor: pointer
-}
+    .button {
+	    cursor: pointer
+    }
+    div {
+        word-break: break-word;
+    }
 </style>
 </head>
 <body class="w3-container w3-center">
@@ -22,7 +36,20 @@
         <div id="div-footer"></div>
     </div>
 <script>
-    
+    var LS;
+    function checkLS() {
+        if (typeof(Storage) !== "undefined") {
+            LS = localStorage;
+            LS.setItem("LScheck", "passed");
+            init();
+        } else {
+            elm.id("div-header").innerHTML = "Sorry";
+            elm.id("div-body").innerHTML = "Your device or browser doesn't support essential functions.";
+        }
+    }
+    function init() {
+        
+    }
 </script>
 </body>
 </html>
