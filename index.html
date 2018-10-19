@@ -41,6 +41,16 @@
     i.e:hover {
         color: #f783ac;
     }
+    .badinput::placeholder {
+        color: red;
+        opacity: 1; /* Firefox */
+    }
+    .badinput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: red;
+    }
+    .badinput::-ms-input-placeholder { /* Microsoft Edge */
+        color: red;
+    }
 </style>
 </head>
 <body class="w3-container w3-center" onload="checkLS()">
