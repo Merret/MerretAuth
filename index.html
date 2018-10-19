@@ -85,7 +85,8 @@
         elm.id("i-login").className += " " + abc[index];
     }
     function send() {
-        
+        if(window.location.protocol!="https:") { return; }
+	
         
     }
 </script>
