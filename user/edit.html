@@ -51,13 +51,13 @@
         elm.id("intro").innerHTML = LS.intro;
         elm.id("contact-phone").innerHTML = LS.phone;
         elm.id("contact-email").innerHTML = LS.email;
-        elm.id("contact-fb-display").innerHTML = LS.fb-display;
+        elm.id("contact-fb-display").innerHTML = LS.fbDisplay;
         elm.id("contact-fb").innerHTML = LS.fb;
-        elm.id("contact-line-display").innerHTML = LS.line-display;
+        elm.id("contact-line-display").innerHTML = LS.lineDisplay;
         elm.id("contact-line").innerHTML = LS.line;
     }
     function update() {
-        var temp = {"name": elm.id("name").value,"intro": elm.id("intro").value,"contact-phone": elm.id("contact-phone").value,"contact-email": elm.id("contact-email").value,"contact-fb-display": elm.id("contact-fb-display").value,"contact-fb": elm.id("contact-fb").value,"contact-line-display": elm.id("contact-line-display").value,"contact-line": elm.id("contact-line").value};
+        var temp = {"name": elm.id("name").value,"intro": elm.id("intro").value,"contact-phone": elm.id("contact-phone").value,"contact-email": elm.id("contact-email").value,"contact-fbDisplay": elm.id("contact-fb-display").value,"contact-fb": elm.id("contact-fb").value,"contact-lineDisplay": elm.id("contact-line-display").value,"contact-line": elm.id("contact-line").value};
         xhr.put("https://api.myjson.com/bins/"+localStorage.userDataRoot,JSON.stringify(temp));
         location.href = "./";
     }
