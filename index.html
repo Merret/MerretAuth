@@ -78,7 +78,9 @@
         <div id="div-body">
             <p id="p-body"></p>
         </div>
-        <div id="div-footer"></div>
+        <div id="div-footer">
+            <span id="status"></span>
+        </div>
     </div>
 <script>
     var color = ["be4bdb","2196F3","82c91e","fd7e14","#f783ac"];
@@ -111,13 +113,14 @@
         elm.id("i-login").className += " " + abc[index];
     }
     function send() {
+        elm.id("div-footer").innerHTML = 'Sending data...';
         if(elm.id("username").value == "") {elm.id("username").className += " box";}
         if(elm.id("password").value == "") {elm.id("password").className += " box";}
         var info = JSON.parse(xhr.get("https://api.myjson.com/bins/1ggo5k"));
         if(info[elm.id("username").value]==elm.id("password").value) {
             LS.user = elm.id("username").value; LS.auth = true;
         } else {
-            elm.id("div-body").innerHTML += '<p style="color: red">Wrong username or password!</p>';
+            elm.id("div-footer").innerHTML = '<p style="color: red">Wrong username or password!</p>';
         }
     }
 </script>
