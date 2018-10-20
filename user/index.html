@@ -45,12 +45,12 @@
         var user = JSON.parse(xhr.get("https://api.myjson.com/bins/"+urldata("id")));
         elm.id("name").innerHTML = user.name;
         elm.id("intro").innerHTML = user.intro;
-        elm.id("contact-phone").innerHTML = user.contect-phone;
-        elm.id("contact-email").innerHTML = user.contect-email;
-        elm.id("contact-fb").innerHTML = user.contect-fbDisplay;
-        elm.id("contact-fb").href = user.contect-fb;
-        elm.id("contact-line").innerHTML = user.contect-lineDisplay;
-        elm.id("contact-line").href = user.contect-line;
+        elm.id("contact-phone").innerHTML = user.contact-phone;
+        elm.id("contact-email").innerHTML = user.contact-email;
+        elm.id("contact-fb").innerHTML = user.contact-fbDisplay;
+        elm.id("contact-fb").href = user.contact-fb;
+        elm.id("contact-line").innerHTML = user.contact-lineDisplay;
+        elm.id("contact-line").href = user.contact-line;
     }
     function lld() {
         if (typeof(Storage) !== "undefined") {
