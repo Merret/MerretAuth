@@ -124,10 +124,14 @@
         }
     }
     function getData() {
+        elm.id("status").innerHTML = 'Downloading root data...';
         var root = JSON.parse(xhr.get("https://api.myjson.com/bins/ol6ds"));
+        elm.id("status").innerHTML = 'Downloading user data...';
         var data = JSON.parse(xhr.get("https://api.myjson.com/bins/"+root[LS.user]));
+        elm.id("status").innerHTML = 'Loading user data...';
         LS.name = data.name;
         LS.email = data.email;
+        elm.id("status").innerHTML = 'All user data loaded.';
     }
 </script>
 </body>
