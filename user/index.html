@@ -41,7 +41,27 @@
     
 <script>
     function loaddoc() {
-        
+        if(urldata("id")==-1) {lld();return;}
+        var user = JSON.parse(xhr.get("https://api.myjson.com/bins/"+urldata("id")));
+        elm.id("name").innerHTML = user.name;
+        elm.id("intro").innerHTML = user.intro;
+        elm.id("contact-phone").innerHTML = user.phone;
+        elm.id("contact-email").innerHTML = user.email;
+        elm.id("contact-fb").innerHTML = user.fb;
+        elm.id("contact-line").innerHTML = user.line;
+    }
+    function lld() {
+        if (typeof(Storage) !== "undefined") {
+            var LS = localStorage;
+        } else {
+            return;
+        }
+        elm.id("name").innerHTML = LS.user.name;
+        elm.id("intro").innerHTML = LS.user.intro;
+        elm.id("contact-phone").innerHTML = LS.user.phone;
+        elm.id("contact-email").innerHTML = LS.user.email;
+        elm.id("contact-fb").innerHTML = LS.user.fb;
+        elm.id("contact-line").innerHTML = LS.user.line;
     }
 </script>
 </body>
