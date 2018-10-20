@@ -5,24 +5,15 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/xhr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.3/js/urldata.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/xhr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/urldata.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/element.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-<script>
-    var elm = (function () {
-        var id = function(x) {
-            return document.getElementById(x);
-        }
-        return {
-            ID: id,
-            id: id
-        }
-    })();
-</script>
+
 <style>
     @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
     .button {
-	    cursor: pointer
+        cursor: pointer
     }
     body {
         font-family: 'Noto Sans TC', sans-serif;
@@ -36,7 +27,7 @@
     }
 </style>
 </head>
-<body class="w3-container">
+<body class="w3-container" onload="loaddoc()">
     <h2 id="name"></h2>
     <hr>
     <p id="intro"></p>
@@ -49,7 +40,9 @@
     <hr>
     
 <script>
-    
+    function loaddoc() {
+        
+    }
 </script>
 </body>
 </html>
