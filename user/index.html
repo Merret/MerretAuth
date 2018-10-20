@@ -70,7 +70,7 @@
         elm.id("contact-fb").href = LS.fb;
         elm.id("contact-line").innerHTML = LS.lineDisplay;
         elm.id("contact-line").href = LS.line;
-        elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+location.href;
+        elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+location.href+"?id="+LS.userDataRoot;
     }
 </script>
 </body>
