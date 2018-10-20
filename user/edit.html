@@ -33,6 +33,7 @@
     <hr>
     <textarea id="intro"></textarea><br>
     <div id="contact">
+        <img id="qr" style="float: right">
         <input id="contact-phone" class="contact"></input><br>
         <input id="contact-email" class="contact"></input><br>
         <input id="contact-fb-display" class="contact"></input><input id="contact-fb" class="contact"></input><br>
@@ -55,6 +56,7 @@
         elm.id("contact-fb").value = LS.fb;
         elm.id("contact-line-display").value = LS.lineDisplay;
         elm.id("contact-line").value = LS.line;
+        elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+location.href;
     }
     function update() {
         var temp = {"name": elm.id("name").value,"intro": elm.id("intro").value,"contact-phone": elm.id("contact-phone").value,"contact-email": elm.id("contact-email").value,"contact-fbDisplay": elm.id("contact-fb-display").value,"contact-fb": elm.id("contact-fb").value,"contact-lineDisplay": elm.id("contact-line-display").value,"contact-line": elm.id("contact-line").value};
