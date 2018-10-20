@@ -47,8 +47,10 @@
         elm.id("intro").innerHTML = user.intro;
         elm.id("contact-phone").innerHTML = user.phone;
         elm.id("contact-email").innerHTML = user.email;
-        elm.id("contact-fb").innerHTML = user.fb;
-        elm.id("contact-line").innerHTML = user.line;
+        elm.id("contact-fb").innerHTML = user.fb-display;
+        elm.id("contact-fb").href = user.fb;
+        elm.id("contact-line").innerHTML = user.line-display;
+        elm.id("contact-line").href = user.line;
     }
     function lld() {
         if (typeof(Storage) !== "undefined") {
