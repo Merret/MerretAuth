@@ -47,7 +47,9 @@
         elm.id("name").innerHTML = user.name;
         elm.id("intro").innerHTML = user.intro;
         elm.id("contact-phone").innerHTML = user["contact-phone"];
+        elm.id("contact-phone").href = "tel:"+user["contact-phone"];
         elm.id("contact-email").innerHTML = user["contact-email"];
+        elm.id("contact-email").href = "mailto:"+user["contact-email"];
         elm.id("contact-fb").innerHTML = user["contact-fbDisplay"];
         elm.id("contact-fb").href = user["contact-fb"];
         elm.id("contact-line").innerHTML = user["contact-lineDisplay"];
