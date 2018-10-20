@@ -118,7 +118,7 @@
         if(info[elm.id("username").value]==elm.id("password").value) {
             LS.user = elm.id("username").value; LS.auth = true;
             elm.id("div-footer").innerHTML = '<p style="color: green">Login Successfully!</p><p id="status"></p>';
-            
+            getData();
         } else {
             elm.id("div-footer").innerHTML = '<p style="color: red">Wrong username or password!</p>';
         }
