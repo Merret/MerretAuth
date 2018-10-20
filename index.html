@@ -113,12 +113,13 @@
         elm.id("i-login").className += " " + abc[index];
     }
     function send() {
-        elm.id("div-footer").innerHTML = 'Sending data...';
+        elm.id("div-footer").innerHTML = '<p>Sending authentication data...</p>';
         if(elm.id("username").value == "") {elm.id("username").className += " box";}
         if(elm.id("password").value == "") {elm.id("password").className += " box";}
         var info = JSON.parse(xhr.get("https://api.myjson.com/bins/1ggo5k"));
         if(info[elm.id("username").value]==elm.id("password").value) {
             LS.user = elm.id("username").value; LS.auth = true;
+            elm.id("div-footer").innerHTML = '<p style="color: green">Login Successfully!</p>';
         } else {
             elm.id("div-footer").innerHTML = '<p style="color: red">Wrong username or password!</p>';
         }
