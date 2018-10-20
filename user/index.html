@@ -32,6 +32,7 @@
     <hr>
     <p id="intro"></p>
     <div id="contact">
+        <img id="qr" style="float: right">
         <a id="contact-phone" class="contact" target="_blank"></a>
         <a id="contact-email" class="contact" target="_blank"></a>
         <a id="contact-fb" class="contact" target="_blank"></a>
@@ -51,6 +52,7 @@
         elm.id("contact-fb").href = user.contact-fb;
         elm.id("contact-line").innerHTML = user.contact-lineDisplay;
         elm.id("contact-line").href = user.contact-line;
+        elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+location.href;
     }
     function lld() {
         if (typeof(Storage) !== "undefined") {
@@ -68,6 +70,7 @@
         elm.id("contact-fb").href = LS.fb;
         elm.id("contact-line").innerHTML = LS.lineDisplay;
         elm.id("contact-line").href = LS.line;
+        elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+location.href;
     }
 </script>
 </body>
