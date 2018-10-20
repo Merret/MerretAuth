@@ -32,10 +32,10 @@
     <hr>
     <p id="intro"></p>
     <div id="contact">
-        <a id="contact-phone" class="contact"></a>
-        <a id="contact-email" class="contact"></a>
-        <a id="contact-fb" class="contact"></a>
-        <a id="contact-line" class="contact"></a>
+        <a id="contact-phone" class="contact" target="_blank"></a>
+        <a id="contact-email" class="contact" target="_blank"></a>
+        <a id="contact-fb" class="contact" target="_blank"></a>
+        <a id="contact-line" class="contact" target="_blank"></a>
     </div>
     <hr>
     
@@ -61,7 +61,9 @@
         elm.id("name").innerHTML = LS.name;
         elm.id("intro").innerHTML = LS.intro;
         elm.id("contact-phone").innerHTML = LS.phone;
+        elm.id("contact-phone").href = "tel:"+LS.phone;
         elm.id("contact-email").innerHTML = LS.email;
+        elm.id("contact-email").href = "mailto:"+LS.email;
         elm.id("contact-fb").innerHTML = LS.fbDisplay;
         elm.id("contact-fb").href = LS.fb;
         elm.id("contact-line").innerHTML = LS.lineDisplay;
