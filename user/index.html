@@ -46,12 +46,12 @@
         var user = JSON.parse(xhr.get("https://api.myjson.com/bins/"+urldata("id")));
         elm.id("name").innerHTML = user.name;
         elm.id("intro").innerHTML = user.intro;
-        elm.id("contact-phone").innerHTML = user.contact-phone;
-        elm.id("contact-email").innerHTML = user.contact-email;
-        elm.id("contact-fb").innerHTML = user.contact-fbDisplay;
-        elm.id("contact-fb").href = user.contact-fb;
-        elm.id("contact-line").innerHTML = user.contact-lineDisplay;
-        elm.id("contact-line").href = user.contact-line;
+        elm.id("contact-phone").innerHTML = user["contact-phone"];
+        elm.id("contact-email").innerHTML = user["contact-email"];
+        elm.id("contact-fb").innerHTML = user["contact-fbDisplay"];
+        elm.id("contact-fb").href = user["contact-fb"];
+        elm.id("contact-line").innerHTML = user["contact-lineDisplay"];
+        elm.id("contact-line").href = user["contact-line"];
         elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data="+location.href;
     }
     function lld() {
