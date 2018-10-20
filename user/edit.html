@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Editing User Informations</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/xhr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/urldata.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4/js/element.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+<style>
+    @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+    .button {
+        cursor: pointer
+    }
+    body {
+        font-family: 'Noto Sans TC', sans-serif;
+        word-break: break-word;
+    }
+    p {
+        white-space: pre;
+    }
+    a.contact {
+        display: block;
+    }
+</style>
+</head>
+<body class="w3-container" onload="loaddoc()">
+    <div class="w3-white" style="position: sticky"><button class="w3-button" onclick="update()">Save</button></div>
+    <input id="name"></input>
+    <hr>
+    <textarea id="intro"></textarea><br>
+    <div id="contact">
+        <input id="contact-phone" class="contact"></input><br>
+        <input id="contact-email" class="contact"></input><br>
+        <input id="contact-fb-display" class="contact"></input><input id="contact-fb" class="contact"></input><br>
+        <input id="contact-line-display" class="contact"></input><input id="contact-line" class="contact"></input>
+    </div>
+    <hr>
+    
+<script>
+    function loaddoc() {
+        if (typeof(Storage) !== "undefined") {
+            var LS = localStorage;
+        } else {
+            return;
+        }
+        elm.id("name").innerHTML = LS.name;
+        elm.id("intro").innerHTML = LS.intro;
+        elm.id("contact-phone").innerHTML = LS.phone;
+        elm.id("contact-email").innerHTML = LS.email;
+        elm.id("contact-fb-display").innerHTML = LS.fb-display;
+        elm.id("contact-fb").innerHTML = LS.fb;
+        elm.id("contact-line-display").innerHTML = LS.line-display;
+        elm.id("contact-line").innerHTML = LS.line;
+    }
+    function update() {
+        var temp = {"name": elm.id("name").value,"intro": elm.id("intro").value,"contact-phone": elm.id("contact-phone").value,"contact-email": elm.id("contact-email").value,"contact-fb-display": elm.id("contact-fb-display").value,"contact-fb": elm.id("contact-fb").value,"contact-line-display": elm.id("contact-line-display").value,"contact-line": elm.id("contact-line").value}
+        xhr.put("",JSON.stringify(temp));
+        location.href = "./";
+    }
+</script>
+</body>
+</html>
