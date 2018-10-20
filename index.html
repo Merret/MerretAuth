@@ -131,7 +131,13 @@
 	LS.userDataRoot = root[LS.user];
         elm.id("status").innerHTML = 'Loading user data...';
         LS.name = data.name;
+        LS.intro = data.intro;
+        LS.phone = data.phone;
         LS.email = data.email;
+        LS.fb = data.fb;
+        LS.fbDisplay = data.fbDisplay;
+        LS.line = data.line;
+        LS.lineDisplay = data.lineDisplay;
         elm.id("status").innerHTML = 'All user data loaded.';
     }
 </script>
