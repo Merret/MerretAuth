@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,66 +19,64 @@
     })();
 </script>
 <style>
-    .button {
-	    cursor: pointer
-    }
-    div {
-        word-break: break-word;
-    }
-    i.a:hover {
-        color: #be4bdb;
-    }
-    i.b:hover {
-        color: #2196F3;
-    }
-    i.c:hover {
-        color: #82c91e;
-    }
-    i.d:hover {
-        color: #fd7e14;
-    }
-    i.e:hover {
-        color: #f783ac;
-    }
-    .box::placeholder {
-        color: red;
-        opacity: 1;
-    }
-    .box:-ms-input-placeholder {
-        color: red;
-        opacity: 1;
-    }
-    .box::-ms-input-placeholder {
-        color: red;
-        opacity: 1;
-    }
-    .box::-webkit-input-placeholder {
-        color: red;
-        opacity: 1;
-    }
-    .box:-moz-placeholder {
-        color: red;
-        opacity: 1;
-    }
-    .box::-moz-placeholder {
-        color: red;
-        opacity: 1;
-    }
+.button {
+	cursor: pointer
+}
+div {
+	word-break: break-word;
+}
+i.a:hover {
+	color: #be4bdb;
+}
+i.b:hover {
+	color: #2196F3;
+}
+i.c:hover {
+	color: #82c91e;
+}
+i.d:hover {
+	color: #fd7e14;
+}
+i.e:hover {
+	color: #f783ac;
+}
+ .box::placeholder {
+ color: red;
+ opacity: 1;
+}
+ .box:-ms-input-placeholder {
+ color: red;
+ opacity: 1;
+}
+ .box::-ms-input-placeholder {
+ color: red;
+ opacity: 1;
+}
+ .box::-webkit-input-placeholder {
+ color: red;
+ opacity: 1;
+}
+ .box:-moz-placeholder {
+ color: red;
+ opacity: 1;
+}
+ .box::-moz-placeholder {
+ color: red;
+ opacity: 1;
+}
 </style>
 </head>
 <body class="w3-container w3-center" onload="checkLS()">
-    <div id="stage" class="w3-card w3-round-xlarge w3-margin w3-padding w3-white" style="opacity: 0.85;">
-        <div id="div-header">
-            <h1 id="h1-header"></h1>
-	    </div>
-        <hr style="margin-left:10%; width: 80%; color: gray;">
-        <div id="div-body">
-            <p id="p-body"></p>
-        </div>
-        <div id="div-footer">
-            
-        </div>
-    </div>
+<div id="stage" class="w3-card w3-round-xlarge w3-margin w3-padding w3-white" style="opacity: 0.85;">
+  <div id="div-header">
+    <h1 id="h1-header"></h1>
+  </div>
+  <hr style="margin-left:10%; width: 80%; color: gray;">
+  <div id="div-body">
+    <p id="p-body"></p>
+  </div>
+  <div id="div-footer"> </div>
+</div>
 <script>
     var color = ["be4bdb","2196F3","82c91e","fd7e14","#f783ac"];
     var LS;
@@ -87,18 +84,20 @@
         if (typeof(Storage) !== "undefined") {
             LS = localStorage;
             LS.setItem("LScheck", "passed");
-            LFinit();
+            RFinit();
         } else {
             elm.id("h1-header").innerHTML = "Sorry";
             elm.id("p-body").innerHTML = "Your device or browser doesn't support essential functions.";
         }
     }
-    function LFinit() {
-        elm.id("h1-header").innerHTML = "Login";
+    function RFinit() {
+        elm.id("h1-header").innerHTML = "Register";
         elm.id("div-body").innerHTML = "";
-        elm.id("div-body").innerHTML += '<i id="i-un" class="fas fa-user fa-2x"></i><input id="username" class="w3-margin" style="width: 70%" type="text" placeholder="Username" required/><br>';
-        elm.id("div-body").innerHTML += '<i id="i-pw" class="fas fa-key fa-2x"></i><input id="password" class="w3-margin" style="width: 70%" type="password" placeholder="Password" required/><br>';
-        elm.id("div-body").innerHTML += '<i id="i-login" class="fas fa-sign-in-alt fa-2x button" onclick="send()"></i>';
+        elm.id("div-body").innerHTML += '<i id="i-un" class="fas fa-user fa-2x"></i><input id="username" class="w3-margin" style="width: 70%" type="text" placeholder="Username (required)" required/><br>';
+        elm.id("div-body").innerHTML += '<i id="i-mail" class="fas fa-envelope fa-2x"></i><input id="email" class="w3-margin" style="width: 70%" type="text" placeholder="Email (required)" required/><br>';
+        elm.id("div-body").innerHTML += '<i id="i-pw" class="fas fa-key fa-2x"></i><input id="password" class="w3-margin" style="width: 70%" type="password" placeholder="Password (required)" required/><br>';
+        elm.id("div-body").innerHTML += '<i id="i-pw2" class="fas fa-key fa-2x"></i><input id="password2" class="w3-margin" style="width: 70%" type="password" placeholder="Check Password (required)" required/><br>';
+        elm.id("div-body").innerHTML += '<i id="i-register" class="fas fa-sign-in-alt fa-2x button" onclick="send()"></i>';
         changeColor();
     }
     function changeColor() {
@@ -107,8 +106,10 @@
         var chosen = color[index];
         document.body.style.backgroundColor = "#" + chosen;
         elm.id("i-un").className += " " + abc[index];
+        elm.id("i-mail").className += " " + abc[index];
         elm.id("i-pw").className += " " + abc[index];
-        elm.id("i-login").className += " " + abc[index];
+        elm.id("i-pw2").className += " " + abc[index];
+        elm.id("i-register").className += " " + abc[index];
     }
     function send() {
         elm.id("div-footer").innerHTML = '<p>Sending authentication data...</p>';
@@ -122,24 +123,6 @@
         } else {
             elm.id("div-footer").innerHTML = '<p style="color: red">Wrong username or password!</p>';
         }
-    }
-    function getData() {
-        elm.id("status").innerHTML = 'Downloading system data...';
-        var root = JSON.parse(xhr.get("https://api.myjson.com/bins/ol6ds"));
-        elm.id("status").innerHTML = 'Downloading user data...';
-        var data = JSON.parse(xhr.get("https://api.myjson.com/bins/"+root[LS.user]));
-	LS.userDataRoot = root[LS.user];
-        elm.id("status").innerHTML = 'Loading user data...';
-        LS.name = data.name;
-        LS.intro = data.intro;
-        LS.phone = data["contact-phone"];
-        LS.email = data["contact-email"];
-        LS.fb = data["contact-fb"];
-        LS.fbDisplay = data["contact-fbDisplay"];
-        LS.line = data["contact-line"];
-        LS.lineDisplay = data["contact-lineDisplay"];
-        elm.id("status").innerHTML = 'All user data loaded.';
-        location.href = "./user/";
     }
 </script>
 </body>
