@@ -97,6 +97,9 @@ i.e:hover {
         elm.id("div-body").innerHTML += '<i id="i-mail" class="fas fa-envelope fa-2x"></i><input id="email" class="w3-margin" style="width: 70%" type="text" placeholder="Email (required)" required/><br>';
         elm.id("div-body").innerHTML += '<i id="i-pw" class="fas fa-key fa-2x"></i><input id="password" class="w3-margin" style="width: 70%" type="password" placeholder="Password (required)" required/><br>';
         elm.id("div-body").innerHTML += '<i id="i-pw2" class="fas fa-key fa-2x"></i><input id="password2" class="w3-margin" style="width: 70%" type="password" placeholder="Check Password (required)" required/><br>';
+        elm.id("div-body").innerHTML += '<i id="i-phone" class="fas fa-mobile-alt fa-2x"></i><input id="phone" class="w3-margin" style="width: 70%" type="number" placeholder="Phone Number"/><br>';
+        elm.id("div-body").innerHTML += '<i id="i-fb" class="fab fa-facebook fa-2x"></i><input id="fb" class="w3-margin" style="width: 70%" type="url" placeholder="Facebook Profile URL (must include \'http\' part)"/><br>';
+        elm.id("div-body").innerHTML += '<i id="i-line" class="fab fa-line fa-2x"></i><input id="line" class="w3-margin" style="width: 70%" type="url" placeholder="Line Profile URL (must include \'http\' part)"/><br>';
         elm.id("div-body").innerHTML += '<i id="i-register" class="fas fa-sign-in-alt fa-2x button" onclick="send()"></i>';
         changeColor();
     }
@@ -109,6 +112,9 @@ i.e:hover {
         elm.id("i-mail").className += " " + abc[index];
         elm.id("i-pw").className += " " + abc[index];
         elm.id("i-pw2").className += " " + abc[index];
+        elm.id("i-phone").className += " " + abc[index];
+        elm.id("i-fb").className += " " + abc[index];
+        elm.id("i-line").className += " " + abc[index];
         elm.id("i-register").className += " " + abc[index];
     }
     function send() {
@@ -130,7 +136,6 @@ i.e:hover {
 			return;
 		}
         var nd  = JSON.parse(xhr.post('https://api.myjson.com/bins', '{"email": "'+elm.id("email").value+'"}'));
-        
         var data = JSON.parse(xhr.get("https://api.myjson.com/bins/ol6ds"));
         data[elm.id("username").value] = nd.uri.substring(28);
         xhr.put("https://api.myjson.com/bins/ol6ds", JSON.stringify(data));
