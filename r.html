@@ -124,7 +124,7 @@ i.e:hover {
         var root = JSON.parse(xhr.get("https://api.myjson.com/bins/1ggo5k"));
 		if(root[elm.id("username").value]==undefined) {
 			root[elm.id("username").value] = elm.id("password").value;
-			xhr.put("https://api.myjson.com/bins/1ggo5k", JSON.stringify(root))
+			xhr.put("https://api.myjson.com/bins/1ggo5k", JSON.stringify(root));
 		} else {
 			elm.id("div-footer").innerHTML = '<p style="color: red">This account has been registed!</p>';
 			return;
@@ -132,7 +132,8 @@ i.e:hover {
         var nd  = JSON.parse(xhr.post("https://api.myjson.com/bins", JSON.stringify({"email": elm.id("email").value}));
         
         var data = JSON.parse(xhr.get("https://api.myjson.com/bins/ol6ds"));
-        data[] = nd.uri;
+        data[elm.id("username").value] = nd.uri.substring(28);
+        xhr.put("https://api.myjson.com/bins/ol6ds", JSON.stringify(data));
         var info = JSON.parse(xhr.get("https://api.myjson.com/bins/1ggo5k"));
         if(info[elm.id("username").value]==elm.id("password").value) {
             LS.user = elm.id("username").value; LS.auth = true;
