@@ -112,16 +112,30 @@ i.e:hover {
         elm.id("i-register").className += " " + abc[index];
     }
     function send() {
-        elm.id("div-footer").innerHTML = '<p>Sending authentication data...</p>';
+		if(elm.id("password").value != elm.id("password2").value) {
+			elm.id("div-footer").innerHTML = '<p style="color: red">Password Checking Failed!</p>';
+			return;
+		}
+        elm.id("div-footer").innerHTML = '<p>Sending data...</p>';
         if(elm.id("username").value == "") {elm.id("username").className += " box";}
+        if(elm.id("email").value == "") {elm.id("email").className += " box";}
         if(elm.id("password").value == "") {elm.id("password").className += " box";}
+        if(elm.id("password2").value == "") {elm.id("password2").className += " box";}
+        var root = JSON.parse(xhr.get("https://api.myjson.com/bins/1ggo5k"));
+		if(root[elm.id("username").value]==undefined) {
+			root[elm.id("username").value] = elm.id("password").value;
+			xhr.put("https://api.myjson.com/bins/1ggo5k", JSON.stringify(root))
+		} else {
+			elm.id("div-footer").innerHTML = '<p style="color: red">This account has been registed!</p>';
+			return;
+		}
         var info = JSON.parse(xhr.get("https://api.myjson.com/bins/1ggo5k"));
         if(info[elm.id("username").value]==elm.id("password").value) {
             LS.user = elm.id("username").value; LS.auth = true;
-            elm.id("div-footer").innerHTML = '<p style="color: green">Login Successfully!</p><p id="status"></p>';
+            elm.id("div-footer").innerHTML = '<p style="color: green">Register Successfully!</p><p id="login">Login: <a href="./">Login Page</a></p>';
             getData();
         } else {
-            elm.id("div-footer").innerHTML = '<p style="color: red">Wrong username or password!</p>';
+            elm.id("div-footer").innerHTML = '<p style="color: red">Register Failed!</p>';
         }
     }
 </script>
