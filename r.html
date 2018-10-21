@@ -129,7 +129,7 @@ i.e:hover {
 			elm.id("div-footer").innerHTML = '<p style="color: red">This account has been registed!</p>';
 			return;
 		}
-        var nd  = JSON.parse(xhr.post("https://api.myjson.com/bins", JSON.stringify({"email": elm.id("email").value}));
+        var nd  = JSON.parse(xhr.post("https://api.myjson.com/bins", JSON.stringify('{"email": "'+elm.id("email").value+'"}'));
         
         var data = JSON.parse(xhr.get("https://api.myjson.com/bins/ol6ds"));
         data[elm.id("username").value] = nd.uri.substring(28);
