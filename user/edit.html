@@ -59,6 +59,7 @@
     function update() {
         var temp = {"name": elm.id("name").value,"intro": elm.id("intro").value,"contact-phone": elm.id("contact-phone").value,"contact-email": elm.id("contact-email").value,"contact-fbDisplay": elm.id("contact-fb-display").value,"contact-fb": elm.id("contact-fb").value,"contact-lineDisplay": elm.id("contact-line-display").value,"contact-line": elm.id("contact-line").value};
         xhr.put("https://api.myjson.com/bins/"+localStorage.userDataRoot,JSON.stringify(temp));
+        var LS = localStorage;
         LS.name = temp.name;
         LS.intro = temp.intro;
         LS.phone = temp["contact-phone"];
