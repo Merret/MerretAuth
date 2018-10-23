@@ -33,10 +33,10 @@
     <img id="qr" style="width: 120px; float: right; margin: 10px;">
     <p id="intro"></p>
     <div id="contact">
-        <span>Phone:</span><a id="contact-phone" class="contact" target="_blank"></a>
-        <span>Email:</span><a id="contact-email" class="contact" target="_blank"></a>
-        <span>Facebook:</span><a id="contact-fb" class="contact" target="_blank"></a>
-        <span>Line:</span><a id="contact-line" class="contact" target="_blank"></a>
+        <a id="contact-phone" class="contact" target="_blank"></a>
+        <a id="contact-email" class="contact" target="_blank"></a>
+        <a id="contact-fb" class="contact" target="_blank"></a>
+        <a id="contact-line" class="contact" target="_blank"></a>
     </div>
     <hr>
     
@@ -49,19 +49,19 @@
         elm.id("intro").innerHTML = user.intro;
         }
         if(user["contact-phone"]) {
-        elm.id("contact-phone").innerHTML = user["contact-phone"];
+        elm.id("contact-phone").innerHTML = "Phone: "+user["contact-phone"];
         elm.id("contact-phone").href = "tel:"+user["contact-phone"];
         }
         if(user["contact-email"]) {
-        elm.id("contact-email").innerHTML = user["contact-email"];
+        elm.id("contact-email").innerHTML = "Email: "+user["contact-email"];
         elm.id("contact-email").href = "mailto:"+user["contact-email"];
         }
         if(user["contact-fb"]) {
-        elm.id("contact-fb").innerHTML = user["contact-fbDisplay"];
+        elm.id("contact-fb").innerHTML = "Facebook: "+user["contact-fbDisplay"];
         elm.id("contact-fb").href = user["contact-fb"];
         }
         if(user["contact-line"]) {
-        elm.id("contact-line").innerHTML = user["contact-lineDisplay"];
+        elm.id("contact-line").innerHTML = "Line: "+user["contact-lineDisplay"];
         elm.id("contact-line").href = user["contact-line"];
         }
         elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data="+location.href;
@@ -77,19 +77,19 @@
         elm.id("intro").innerHTML = LS.intro;
         }
         if(LS.phone) {
-        elm.id("contact-phone").innerHTML = LS.phone;
+        elm.id("contact-phone").innerHTML = "Phone: "+LS.phone;
         elm.id("contact-phone").href = "tel:"+LS.phone;
         }
         if(LS.email) {
-        elm.id("contact-email").innerHTML = LS.email;
+        elm.id("contact-email").innerHTML = " Email: "+LS.email;
         elm.id("contact-email").href = "mailto:"+LS.email;
         }
         if(LS.fb) {
-        elm.id("contact-fb").innerHTML = LS.fbDisplay;
+        elm.id("contact-fb").innerHTML = "Facebook: "+LS.fbDisplay;
         elm.id("contact-fb").href = LS.fb;
         }
         if(LS.line) {
-        elm.id("contact-line").innerHTML = LS.lineDisplay;
+        elm.id("contact-line").innerHTML = "Line: "+LS.lineDisplay;
         elm.id("contact-line").href = LS.line;
         }
         elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+location.href+"?id="+LS.userDataRoot;
