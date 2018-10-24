@@ -49,8 +49,8 @@
         <a id="contact-phone" class="contact" target="_blank"></a>
         <a id="contact-email" class="contact" target="_blank"></a>
         <a id="contact-fb" class="contact" target="_blank"></a>
-        <a id="contact-line" class="contact" target="_blank"></a>
         <a id="contact-ig" class="contact" target="_blank"></a>
+        <a id="contact-line" class="contact" target="_blank"></a>
     </div>
     <hr>
     </div>
@@ -74,13 +74,13 @@
         elm.id("contact-fb").innerHTML = "Facebook: "+user["contact-fbDisplay"];
         elm.id("contact-fb").href = user["contact-fb"];
         }
-        if(user["contact-line"]) {
-        elm.id("contact-line").innerHTML = "Line: "+user["contact-lineDisplay"];
-        elm.id("contact-line").href = user["contact-line"];
-        }
         if(user["contact-ig"]) {
         elm.id("contact-ig").innerHTML = "Line: "+user["contact-igDisplay"];
         elm.id("contact-ig").href = user["contact-ig"];
+        }
+        if(user["contact-line"]) {
+        elm.id("contact-line").innerHTML = "Line: "+user["contact-lineDisplay"];
+        elm.id("contact-line").href = user["contact-line"];
         }
         elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data="+location.href;
         elm.id("bqr").src += location.href;
@@ -107,13 +107,13 @@
         elm.id("contact-fb").innerHTML = "Facebook: "+LS.fbDisplay;
         elm.id("contact-fb").href = LS.fb;
         }
-        if(LS.line) {
-        elm.id("contact-line").innerHTML = "Line: "+LS.lineDisplay;
-        elm.id("contact-line").href = LS.line;
-        }
         if(LS.ig) {
         elm.id("contact-ig").innerHTML = "Line: "+LS.igDisplay;
         elm.id("contact-ig").href = LS.ig;
+        }
+        if(LS.line) {
+        elm.id("contact-line").innerHTML = "Line: "+LS.lineDisplay;
+        elm.id("contact-line").href = LS.line;
         }
         elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+location.href+"?id="+LS.userDataRoot;
         elm.id("bqr").src += location.href+"?id="+LS.userDataRoot;
