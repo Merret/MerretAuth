@@ -36,6 +36,7 @@
         <input id="contact-phone" class="contact" placeholder="Phone number"></input><br>
         <input id="contact-email" class="contact" placeholder="Email"></input><br>
         <input id="contact-fb-display" class="contact" placeholder="Facebook name"></input><input id="contact-fb" class="contact" placeholder="Facebook Profile URL (must include 'http' part)"></input><br>
+        <input id="contact-ig-display" class="contact" placeholder="Instagram name"></input><input id="contact-ig" class="contact" placeholder="Instagram Profile URL (must include 'http' part)"></input><br>
         <input id="contact-line-display" class="contact" placeholder="Line name"></input><input id="contact-line" class="contact" placeholder="Line Profile URL (must include 'http' part)"></input>
     </div>
     <hr>
@@ -53,11 +54,24 @@
         elm.id("contact-email").value = LS.email;
         elm.id("contact-fb-display").value = LS.fbDisplay;
         elm.id("contact-fb").value = LS.fb;
+        elm.id("contact-ig-display").value = LS.igDisplay;
+        elm.id("contact-ig").value = LS.ig;
         elm.id("contact-line-display").value = LS.lineDisplay;
         elm.id("contact-line").value = LS.line;
     }
     function update() {
-        var temp = {"name": elm.id("name").value,"intro": elm.id("intro").value,"contact-phone": elm.id("contact-phone").value,"contact-email": elm.id("contact-email").value,"contact-fbDisplay": elm.id("contact-fb-display").value,"contact-fb": elm.id("contact-fb").value,"contact-lineDisplay": elm.id("contact-line-display").value,"contact-line": elm.id("contact-line").value};
+        var temp = {
+            "name": elm.id("name").value,
+            "intro": elm.id("intro").value,
+            "contact-phone": elm.id("contact-phone").value,
+            "contact-email": elm.id("contact-email").value,
+            "contact-fbDisplay": elm.id("contact-fb-display").value,
+            "contact-fb": elm.id("contact-fb").value,
+            "contact-igDisplay": elm.id("contact-ig-display").value,
+            "contact-ig": elm.id("contact-ig").value,
+            "contact-lineDisplay": elm.id("contact-line-display").value,
+            "contact-line": elm.id("contact-line").value
+        };
         xhr.put("https://api.myjson.com/bins/"+localStorage.userDataRoot,JSON.stringify(temp));
         var LS = localStorage;
         LS.name = temp.name;
@@ -66,6 +80,8 @@
         LS.email = temp["contact-email"];
         LS.fb = temp["contact-fb"];
         LS.fbDisplay = temp["contact-fbDisplay"];
+        LS.ig = temp["contact-ig"];
+        LS.igDisplay = temp["contact-igDisplay"];
         LS.line = temp["contact-line"];
         LS.lineDisplay = temp["contact-lineDisplay"];
         location.href = "./";
