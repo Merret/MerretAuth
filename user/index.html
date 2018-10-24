@@ -38,8 +38,9 @@
     }
 </style>
 </head>
-<body class="w3-container" onload="loaddoc()">
+<body onload="loaddoc()">
     <div id="qrWin" onclick="elm.id('qrWin').style.display='none'"><img id="bqr" src="https://api.qrserver.com/v1/create-qr-code/?size=512x512&data=" style="max-width: 70%; display: block; margin: auto; position: relative; top: 10%;"></div>
+    <div id="showArea" class="w3-container">
     <h2 id="name"></h2>
     <hr>
     <img id="qr" style="max-width: 30%; float: right; margin: 10px;" onclick="elm.id('qrWin').style.display='block'">
@@ -51,7 +52,7 @@
         <a id="contact-line" class="contact" target="_blank"></a>
     </div>
     <hr>
-    
+    </div>
 <script>
     function loaddoc() {
         if(urldata("id")==-1) {lld();return;}
