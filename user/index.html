@@ -26,13 +26,21 @@
         line-height: 1.6;
         display: block;
     }
+    div#qrWin {
+        display: none;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        background-color: rgba(0,0,0,0.75);
+        height: 100%
+    }
 </style>
 </head>
 <body class="w3-container" onload="loaddoc()">
-    <div id="qrWindow" style="display: none; width: 100%; height: 100%"></div>
+    <div id="qrWin" onclick="elm.id('qrWin').style.display='none'"><img id="bqr" src="https://api.qrserver.com/v1/create-qr-code/?size=512x512&data=" style="max-width: 70%"></div>
     <h2 id="name"></h2>
     <hr>
-    <img id="qr" style="max-width: 30%; float: right; margin: 10px;">
+    <img id="qr" style="max-width: 30%; float: right; margin: 10px;" onclick="elm.id('qrWin').style.display='block'">
     <p id="intro"></p>
     <div id="contact">
         <a id="contact-phone" class="contact" target="_blank"></a>
@@ -67,6 +75,7 @@
         elm.id("contact-line").href = user["contact-line"];
         }
         elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data="+location.href;
+        elm.id("bqr").src += location.href;
     }
     function lld() {
         if (typeof(Storage) !== "undefined") {
@@ -95,6 +104,7 @@
         elm.id("contact-line").href = LS.line;
         }
         elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+location.href+"?id="+LS.userDataRoot;
+        elm.id("bqr").src += location.href+"?id="+LS.userDataRoot;
     }
 </script>
 </body>
