@@ -39,7 +39,7 @@
 </style>
 </head>
 <body onload="loaddoc()">
-    <div id="qrWin" onclick="elm.id('qrWin').style.display='none'"><img id="bqr" src="https://api.qrserver.com/v1/create-qr-code/?size=512x512&data=" style="max-width: 70%; display: block; margin: auto; position: relative; top: 10%;"></div>
+    <div id="qrWin" onclick="elm.id('qrWin').style.display='none'"><img id="bqr" src="https://chart.googleapis.com/chart?cht=qr&chs=512x512&chld=M|0&chl=" style="max-width: 70%; display: block; margin: auto; position: relative; top: 10%;"></div>
     <div id="showArea" class="w3-container">
     <h2 id="name"></h2>
     <hr>
@@ -82,7 +82,7 @@
         elm.id("contact-line").innerHTML = "Line: "+user["contact-lineDisplay"];
         elm.id("contact-line").href = user["contact-line"];
         }
-        elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data="+location.href;
+        elm.id("qr").src = "https://chart.googleapis.com/chart?cht=qr&chs=120x120&chld=M|0&chl="+location.href;
         elm.id("bqr").src += location.href;
     }
     function lld() {
@@ -115,7 +115,7 @@
         elm.id("contact-line").innerHTML = "Line: "+LS.lineDisplay;
         elm.id("contact-line").href = LS.line;
         }
-        elm.id("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+location.href+"?id="+LS.userDataRoot;
+        elm.id("qr").src = "https://chart.googleapis.com/chart?cht=qr&chs=150x150&chld=M|0&chl="+location.href+"?id="+LS.userDataRoot;
         elm.id("bqr").src += location.href+"?id="+LS.userDataRoot;
     }
 </script>
